@@ -126,6 +126,9 @@
   @include m(warning) {
     @include button-variant($--button-warning-color, $--button-warning-fill, $--button-warning-border);
   }
+  @include m(secondary) {
+    @include button-variant-tm($--color-text-secondary, $--background-color-secondary, $--button-secondary-border);
+  }
   @include m(danger) {
     @include button-variant($--button-danger-color, $--button-danger-fill, $--button-danger-border);
   }

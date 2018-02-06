@@ -75,7 +75,51 @@
   padding: $padding-vertical $padding-horizontal;
   font-size: $font-size;
   border-radius: $border-radius;
+  min-width: 150px;
   &.is-round {
     padding: $padding-vertical $padding-horizontal;
+  }
+}
+
+@mixin button-variant-tm($color, $background-color, $border-color) {
+  color: $color;
+  background-color: $background-color;
+  border-color: $border-color;
+  font-size: $--button-font-size-tm;
+  padding: $--button-padding-vertical-tm $--button-padding-horizontal-tm; 
+
+  &:hover,
+  &:focus {
+    background: $--color-success;
+    border-color: $--color-success;
+    color: $--color-white;
+  }
+  
+  &:active {
+    background: $--color-success;
+    border-color: $--color-success;
+    color: $--color-white;
+    outline: none;
+  }
+
+  &.is-active {
+    background: $--color-success;
+    border-color: $--color-success;
+    color: $--color-white;
+  }
+
+  &.is-disabled {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $--color-white;
+      background-color: mix($background-color, $--color-white);
+      border-color: mix($border-color, $--color-white);
+    }
+  }
+
+  &.is-plain {
+    @include button-plain($background-color);
   }
 }
