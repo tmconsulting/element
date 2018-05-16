@@ -68,6 +68,7 @@
         value11: '',
         value12: '',
         value13: [],
+        value14: '',
         dynamic: '',
         dynamicCurrentValue: null
       };
@@ -105,7 +106,7 @@ Use Date Picker for date input.
 :::demo
 
 ```html
-<tm-date-picker v-model="value" ref="compo" type="date" default-value="2018-3-4"/>
+<tm-date-picker v-model="value14" ref="compo" type="date" default-value="2018-3-4"/>
 
 ```
 
@@ -390,13 +391,14 @@ Pay attention to capitalization
 
 | format | meaning | note | example |
 |------|------|------|------|------|
-| `yyyy` | year | | 2017 |
+| `YYYY` | year | | 2017 |
 | `M`  | month | no leading 0 | 1 |
 | `MM` | month | | 01 |
 | `W`  | week | only for week picker's `format`; no leading 0 | 1 |
 | `WW` | week | only for week picker's `format`| 01 |
-| `d`  | day | no leading 0 | 2 |
-| `dd` | day | | 02 |
+| `D`  | day | no leading 0 | 2 |
+| `DD` | day | | 02 |
+| `DD` | day | | 02 |
 | `H`  | hour | 24-hour clock; no leading 0 | 3 |
 | `HH` | hour | 24-hour clock | 03 |
 | `h`  | hour | 12-hour clock; must be used with `A` or `a`; no leading 0 | 3 |
@@ -409,6 +411,10 @@ Pay attention to capitalization
 | `a`  | am/pm | only for `format`, lowercased | am |
 | `timestamp` | JS timestamp | only for `value-format`; binding value will be a `number` | 1483326245000 |
 
+:::tip
+Read more on the <a href="http://momentjs.com/">momentjs.com</a>
+:::
+
 :::demo
 ```html
 <template>
@@ -419,7 +425,7 @@ Pay attention to capitalization
       v-model="value10"
       type="date"
       placeholder="Pick a Date"
-      format="yyyy/MM/dd">
+      format="YYYY/MM/dddd">
     </tm-date-picker>
   </div>
   <div class="block">
@@ -429,8 +435,8 @@ Pay attention to capitalization
       v-model="value11"
       type="date"
       placeholder="Pick a Date"
-      format="yyyy/MM/dd"
-      value-format="yyyy-MM-dd">
+      format="YYYY/MM/dddd"
+      value-format="YYYY-MM-dddd">
     </tm-date-picker>
   </div>
   <div class="block">
@@ -440,7 +446,7 @@ Pay attention to capitalization
       v-model="value12"
       type="date"
       placeholder="Pick a Date"
-      format="yyyy/MM/dd"
+      format="YYYY/MM/dddd"
       value-format="timestamp">
     </tm-date-picker>
   </div>
