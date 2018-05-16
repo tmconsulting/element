@@ -1,4 +1,5 @@
 import dateUtil from 'tmconsulting-ui/src/utils/date';
+import moment from 'moment';
 import { t } from 'tmconsulting-ui/src/locale';
 
 const weeks = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
@@ -38,7 +39,8 @@ export const isDateObject = function(val) {
 export const formatDate = function(date, format) {
   date = toDate(date);
   if (!date) return '';
-  return dateUtil.format(date, format || 'yyyy-MM-dd', getI18nSettings());
+  // return dateUtil.format(date, format || 'yyyy-MM-dd', getI18nSettings());
+  return moment(date).format(format);
 };
 
 export const parseDate = function(string, format) {

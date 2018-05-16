@@ -108,16 +108,16 @@ const NewPopper = {
 };
 
 const DEFAULT_FORMATS = {
-  date: 'yyyy-MM-dd',
-  month: 'yyyy-MM',
-  datetime: 'yyyy-MM-dd HH:mm:ss',
+  date: 'YYYY-MM-DD',
+  month: 'MMMM YYYY',
+  datetime: 'YYYY-MM-DD HH:mm:ss',
   time: 'HH:mm:ss',
-  week: 'yyyywWW',
+  week: 'YYYY WW',
   timerange: 'HH:mm:ss',
-  daterange: 'yyyy-MM-dd',
-  dynamic: 'yyyy-MM-dd',
-  datetimerange: 'yyyy-MM-dd HH:mm:ss',
-  year: 'yyyy'
+  daterange: 'YYYY-MM-DD',
+  dynamic: 'YYYY-MM-DD',
+  datetimerange: 'YYYY-MM-DD HH:mm:ss',
+  year: 'YYYY'
 };
 const HAVE_TRIGGER_TYPES = [
   'date',
