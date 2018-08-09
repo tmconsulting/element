@@ -11,7 +11,7 @@
       <span v-if="labelPartChange" class="tm-price-info__change">,{{ labelPartChange }}</span>
     </template>
     <span class="tm-price-info__starts-prefix" v-if="isStartPrice && !partSum">{{ startsPrefix }}</span>
-    <span class="tm-price-info__sum">{{ labelSum }}</span>
+    <span :class="[priceColor ? 'tm-price-info__sum--' + priceColor : 'tm-price-info__sum']">{{ labelSum }}</span>
     <span v-if="labelChange" class="tm-price-info__change">,{{ labelChange }}</span>
     <span v-if="!hideCurrency" class="tm-price-info__currency">{{ currencyUnicode[currency] }}</span>
     <span v-if="taxesInfo" class="tm-price-info__taxes">
@@ -22,99 +22,107 @@
 </template>
 
 <script>
-export default {
-  name: 'TmPriceInfo',
-  props: {
-    isStartPrice: {
-      type: Boolean,
-      default: false
+  export default {
+    name: 'TmPriceInfo',
+    props: {
+      isStartPrice: {
+        type: Boolean,
+        default: false
+      },
+      startsPrefix: {
+        type: String,
+        default: 'от'
+      },
+      sum: {
+        type: [Number, String],
+        default: null,
+        required: true
+      },
+      partSum: {
+        type: [Number, String],
+        default: null
+      },
+      type: {
+        type: String,
+        default: 'paid'
+      },
+      currency: {
+        type: String,
+        default: 'rub'
+      },
+      size: {
+        type: String,
+        default: 'default'
+      },
+      taxesInfo: {
+        type: Boolean,
+        default: false
+      },
+      hideCurrency: {
+        type: Boolean,
+        default: false
+      },
+      noDash: {
+        type: Boolean,
+        default: false
+      },
+      priceColor: {
+        type: String,
+        default: 'black',
+        validator(value) {
+          const colorList = ['red', 'black'];
+          return colorList.indexOf(value) !== -1;
+        }
+      }
     },
-    startsPrefix: {
-      type: String,
-      default: 'от'
+    data() {
+      return {
+        currencyUnicode: {
+          eur: '\u20AC',
+          rub: '\u20BD',
+          usd: '\u0024'
+        }
+      };
     },
-    sum: {
-      type: [Number, String],
-      default: null,
-      required: true
+    methods: {
+      parsingSum(value) {
+        if (typeof value === 'number') {
+          return (value.toFixed(2).split('.'));
+        } else if (typeof value === 'string') {
+          return (value.split('.'));
+        }
+        return false;
+      }
     },
-    partSum: {
-      type: [Number, String],
-      default: null
-    },
-    type: {
-      type: String,
-      default: 'paid'
-    },
-    currency: {
-      type: String,
-      default: 'rub'
-    },
-    size: {
-      type: String,
-      default: 'default'
-    },
-    taxesInfo: {
-      type: Boolean,
-      default: false
-    },
-    hideCurrency: {
-      type: Boolean,
-      default: false
-    },
-    noDash: {
-      type: Boolean,
-      default: false
+    computed: {
+      labelSum() {
+        if (this.sum) {
+          return this.parsingSum(this.sum)[0];
+        } else if (this.sum === 0) {
+          return this.sum;
+        }
+        return null;
+      },
+      labelChange() {
+        if (this.sum) {
+          return this.parsingSum(this.sum)[1];
+        }
+        return null;
+      },
+      labelPartSum() {
+        if (this.partSum) {
+          return this.parsingSum(this.partSum)[0];
+        } else if (this.partSum === 0) {
+          return this.partSum;
+        }
+        return null;
+      },
+      labelPartChange() {
+        if (this.partSum) {
+          return this.parsingSum(this.partSum)[1];
+        }
+        return null;
+      }
     }
-  },
-  data() {
-    return {
-      currencyUnicode: {
-        eur: '\u20AC',
-        rub: '\u20BD',
-        usd: '\u0024'
-      }
-    };
-  },
-  methods: {
-    parsingSum(value) {
-      if (typeof value === 'number') {
-        return (value.toFixed(2).split('.'));
-      } else if (typeof value === 'string') {
-        return (value.split('.'));
-      }
-      return false;
-    }
-  },
-  computed: {
-    labelSum() {
-      if (this.sum) {
-        return this.parsingSum(this.sum)[0];
-      } else if (this.sum === 0) {
-        return this.sum;
-      }
-      return null;
-    },
-    labelChange() {
-      if (this.sum) {
-        return this.parsingSum(this.sum)[1];
-      }
-      return null;
-    },
-    labelPartSum() {
-      if (this.partSum) {
-        return this.parsingSum(this.partSum)[0];
-      } else if (this.partSum === 0) {
-        return this.partSum;
-      }
-      return null;
-    },
-    labelPartChange() {
-      if (this.partSum) {
-        return this.parsingSum(this.partSum)[1];
-      }
-      return null;
-    }
-  }
-};
+  };
 </script>
