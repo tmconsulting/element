@@ -132,7 +132,7 @@
         suggestions: [],
         loading: false,
         highlightedIndex: -1,
-        showCustomLabel: false
+        showCustomLabel: true
       };
     },
     computed: {
