@@ -89,6 +89,10 @@
               "title": "TimePicker"
             },
             {
+              "path": "/advanced-date-picker",
+              "title": "AdvancedDatePicker"
+            },
+            {
               "path": "/date-picker",
               "title": "DatePicker"
             },
@@ -231,6 +235,10 @@
             {
               "path": "/circular-countdown",
               "title": "CircularCountdown"
+            },
+            {
+              "path": "/AdvancedDatePicker",
+              "title": "Advanceddatepicker"
             }
           ]
         }
