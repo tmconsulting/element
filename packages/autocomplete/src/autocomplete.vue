@@ -123,6 +123,10 @@
       clearable: {
         type: Boolean,
         default: false
+      },
+      defaultShowCustomLabel: {
+        type: Boolean,
+        default: false
       }
     },
     data() {
@@ -132,7 +136,7 @@
         suggestions: [],
         loading: false,
         highlightedIndex: -1,
-        showCustomLabel: true
+        showCustomLabel: this.defaultShowCustomLabel
       };
     },
     computed: {
@@ -151,7 +155,7 @@
       }
     },
     methods: {
-      onCustomLabelClick(e) {
+      onCustomLabelClick() {
         this.showCustomLabel = false;
         this.$refs.input.focus();
       },

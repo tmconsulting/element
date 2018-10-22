@@ -14,8 +14,10 @@ import ArrowRightLong from '../../packages/theme-chalk/src/icons/arrow-right-lon
 import ArrowRight from '../../packages/theme-chalk/src/icons/arrow-right.svg';
 import ArrowUpSoft from '../../packages/theme-chalk/src/icons/arrow-up-soft.svg';
 import ArrowsReverse from '../../packages/theme-chalk/src/icons/arrows-reverse.svg';
+import BabyPlaces from '../../packages/theme-chalk/src/icons/baby-places.svg';
 import Bath from '../../packages/theme-chalk/src/icons/bath.svg';
 import Bell from '../../packages/theme-chalk/src/icons/bell.svg';
+import Blanket from '../../packages/theme-chalk/src/icons/blanket.svg';
 import Boiler from '../../packages/theme-chalk/src/icons/boiler.svg';
 import Book from '../../packages/theme-chalk/src/icons/book.svg';
 import Bucket from '../../packages/theme-chalk/src/icons/bucket.svg';
@@ -43,6 +45,7 @@ import DotsVertical from '../../packages/theme-chalk/src/icons/dots-vertical.svg
 import DoubleBed from '../../packages/theme-chalk/src/icons/double-bed.svg';
 import Download from '../../packages/theme-chalk/src/icons/download.svg';
 import Dryer from '../../packages/theme-chalk/src/icons/dryer.svg';
+import EregNotAvailable from '../../packages/theme-chalk/src/icons/ereg-not-available.svg';
 import Error from '../../packages/theme-chalk/src/icons/error.svg';
 import Extinguisher from '../../packages/theme-chalk/src/icons/extinguisher.svg';
 import Files from '../../packages/theme-chalk/src/icons/files.svg';
@@ -54,21 +57,25 @@ import Glass from '../../packages/theme-chalk/src/icons/glass.svg';
 import Gym from '../../packages/theme-chalk/src/icons/gym.svg';
 import HalfStar from '../../packages/theme-chalk/src/icons/half-star.svg';
 import Hanger from '../../packages/theme-chalk/src/icons/hanger.svg';
+import HelpCircle from '../../packages/theme-chalk/src/icons/help-circle.svg';
 import Hotel from '../../packages/theme-chalk/src/icons/hotel.svg';
-import Insurance from '../../packages/theme-chalk/src/icons/insurance.svg';
-import Iron from '../../packages/theme-chalk/src/icons/iron.svg';
+import HygienicKit from '../../packages/theme-chalk/src/icons/hygienic-kit.svg';
 import IconBlock from '../../packages/theme-chalk/src/icons/icon-block.svg';
 import IconHide from '../../packages/theme-chalk/src/icons/icon-hide.svg';
+import IconSocket from '../../packages/theme-chalk/src/icons/icon-socket.svg';
+import Insurance from '../../packages/theme-chalk/src/icons/insurance.svg';
+import Iron from '../../packages/theme-chalk/src/icons/iron.svg';
 import ItemList from '../../packages/theme-chalk/src/icons/item-list.svg';
 import ItemSort from '../../packages/theme-chalk/src/icons/item-sort.svg';
 import KnifeFork2 from '../../packages/theme-chalk/src/icons/knife-fork-2.svg';
 import KnifeFork from '../../packages/theme-chalk/src/icons/knife-fork.svg';
 import Label from '../../packages/theme-chalk/src/icons/label.svg';
+import LinkVariant from '../../packages/theme-chalk/src/icons/link-variant.svg';
 import Loader from '../../packages/theme-chalk/src/icons/loader.svg';
 import Location from '../../packages/theme-chalk/src/icons/location.svg';
 import Luggage from '../../packages/theme-chalk/src/icons/luggage.svg';
-import ManWoman from '../../packages/theme-chalk/src/icons/man-woman.svg';
 import ManUser from '../../packages/theme-chalk/src/icons/man-user.svg';
+import ManWoman from '../../packages/theme-chalk/src/icons/man-woman.svg';
 import Message from '../../packages/theme-chalk/src/icons/message.svg';
 import Minus from '../../packages/theme-chalk/src/icons/minus.svg';
 import Negotiations from '../../packages/theme-chalk/src/icons/negotiations.svg';
@@ -91,7 +98,10 @@ import SeatPerson from '../../packages/theme-chalk/src/icons/seat-person.svg';
 import Service from '../../packages/theme-chalk/src/icons/service.svg';
 import Settings from '../../packages/theme-chalk/src/icons/settings.svg';
 import Shower from '../../packages/theme-chalk/src/icons/shower.svg';
+import ShowerV2 from '../../packages/theme-chalk/src/icons/showerV2.svg';
 import SingleBed from '../../packages/theme-chalk/src/icons/single-bed.svg';
+import Sink from '../../packages/theme-chalk/src/icons/sink.svg';
+import Slippers from '../../packages/theme-chalk/src/icons/slippers.svg';
 import Smoke from '../../packages/theme-chalk/src/icons/smoke.svg';
 import Snow2 from '../../packages/theme-chalk/src/icons/snow-2.svg';
 import Snow from '../../packages/theme-chalk/src/icons/snow.svg';
@@ -103,8 +113,10 @@ import Success from '../../packages/theme-chalk/src/icons/success.svg';
 import Teddybear from '../../packages/theme-chalk/src/icons/teddybear.svg';
 import Ticket from '../../packages/theme-chalk/src/icons/ticket.svg';
 import Time from '../../packages/theme-chalk/src/icons/time.svg';
+import Toilet from '../../packages/theme-chalk/src/icons/toilet.svg';
 import Train from '../../packages/theme-chalk/src/icons/train.svg';
 import Transfer from '../../packages/theme-chalk/src/icons/transfer.svg';
+import TransferV2 from '../../packages/theme-chalk/src/icons/transferV2.svg';
 import Tv from '../../packages/theme-chalk/src/icons/tv.svg';
 import UmbrellaAngle from '../../packages/theme-chalk/src/icons/umbrella-angle.svg';
 import Umbrella from '../../packages/theme-chalk/src/icons/umbrella.svg';
@@ -133,8 +145,10 @@ module.exports = {
   ArrowRight,
   ArrowUpSoft,
   ArrowsReverse,
+  BabyPlaces,
   Bath,
   Bell,
+  Blanket,
   Boiler,
   Book,
   Bucket,
@@ -162,6 +176,7 @@ module.exports = {
   DoubleBed,
   Download,
   Dryer,
+  EregNotAvailable,
   Error,
   Extinguisher,
   Files,
@@ -173,21 +188,25 @@ module.exports = {
   Gym,
   HalfStar,
   Hanger,
+  HelpCircle,
   Hotel,
-  Insurance,
-  Iron,
+  HygienicKit,
   IconBlock,
   IconHide,
+  IconSocket,
+  Insurance,
+  Iron,
   ItemList,
   ItemSort,
   KnifeFork2,
   KnifeFork,
   Label,
+  LinkVariant,
   Loader,
   Location,
   Luggage,
-  ManWoman,
   ManUser,
+  ManWoman,
   Message,
   Minus,
   Negotiations,
@@ -210,7 +229,10 @@ module.exports = {
   Service,
   Settings,
   Shower,
+  ShowerV2,
   SingleBed,
+  Sink,
+  Slippers,
   Smoke,
   Snow2,
   Snow,
@@ -222,8 +244,10 @@ module.exports = {
   Teddybear,
   Ticket,
   Time,
+  Toilet,
   Train,
   Transfer,
+  TransferV2,
   Tv,
   UmbrellaAngle,
   Umbrella,
