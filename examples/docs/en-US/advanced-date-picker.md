@@ -11,26 +11,6 @@
 </script>
 
 <style>
-  .demo-block.demo-date-picker .source {
-    display: flex;
-  }
-
-  .demo-date-picker .block {
-    padding: 30px 0;
-    text-align: center;
-    border-right: solid 1px #EFF2F6;
-    flex: 1;
-    &:last-child {
-      border-right: none;
-    }
-  }
-
-  .demo-date-picker .demonstration {
-    display: block;
-    color: #8492a6;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
   .tm-picker-panel__content {
       margin: 0;
       padding: 16px 0;
@@ -49,9 +29,8 @@ Use Date Picker for date input with mask.
 :::demo
 
 ```html
-   <advanced-date-picker :local-storage-date="form.date"
-                         @date-picked="$refs.advancedPicker.focus()"
-                         @typechange="$emit('to-parent', $event)" />             
+   <tm-advanced-date-picker :local-storage-date="form.date"
+                            @typechange="$emit('to-parent', $event)" />                                    
 ```
 :::
 

@@ -1,6 +1,6 @@
 <template>
   <div class="tm-advanced-date-picker">
-    <tm-popover width="520"
+    <tm-popover :width="popoverWidth"
                 ref="popover"
                 trigger="click"
                 :offset="24">
@@ -16,6 +16,7 @@
                       :disable-old-date="disableOldDate" />
       <div slot="reference" @keyup.enter="onEnterKeyUp">
         <tm-input class="tm-advanced-date-picker__input"
+                  :readonly="false"
                   prefix-icon="calendar"
                   size="extra-large"
                   v-model="inputDate"
@@ -31,7 +32,7 @@
 <script>
   import moment from 'moment';
   import TmPopover from 'tmconsulting-ui/packages/popover/src/main.vue';
-  import TmInput from 'tmconsulting-ui/packages/input/src/input.vue';
+  import TmInput from 'tmconsulting-ui/packages/input';
   import TmDatePicker from 'tmconsulting-ui/packages/date-picker/src/picker/date-picker';
 
   const SINGLE = 'single';
@@ -81,8 +82,12 @@
         default: true
       },
       localStorageDate: {
-        type: [Array, Date],
+        type: [Array, Date, String],
         default: null
+      },
+      popoverWidth: {
+        type: Number,
+        default: 520
       }
     },
 
