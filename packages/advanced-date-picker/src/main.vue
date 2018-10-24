@@ -16,12 +16,22 @@
                       :disable-old-date="disableOldDate" />
       <div slot="reference" @keyup.enter="onEnterKeyUp">
         <tm-input class="tm-advanced-date-picker__input"
+                  v-if="isEditable"
                   :readonly="false"
                   prefix-icon="calendar"
                   size="extra-large"
                   v-model="inputDate"
+                  @blur="isEditable = false"
                   @focus="$refs.datePicker.focus()"
                   v-mask="customMask">
+          <tm-icon name="calendar"></tm-icon>
+        </tm-input>
+        <tm-input class="tm-advanced-date-picker__input"
+                  v-if="!isEditable"
+                  prefix-icon="calendar"
+                  size="extra-large"
+                  @focus="isEditable = true"
+                  :placeholder="blurValue">
           <tm-icon name="calendar"></tm-icon>
         </tm-input>
       </div>
@@ -34,6 +44,8 @@
   import TmPopover from 'tmconsulting-ui/packages/popover/src/main.vue';
   import TmInput from 'tmconsulting-ui/packages/input';
   import TmDatePicker from 'tmconsulting-ui/packages/date-picker/src/picker/date-picker';
+
+  moment.locale('ru');
 
   const SINGLE = 'single';
   const DOUBLE = 'double';
@@ -95,7 +107,8 @@
       type: SINGLE,
       date: null,
       inputDate: null,
-      value: null
+      value: null,
+      isEditable: false
     }),
 
     mounted() {
@@ -104,6 +117,14 @@
     },
 
     computed: {
+      blurValue() {
+        if (Array.isArray(this.date)) {
+          const [from, till] = this.date;
+          return `${moment(from).format('D MMMM')} - ${moment(till).format('D MMMM')}`;
+        } else {
+          return moment(this.date).format('D MMMM');
+        }
+      },
       dateMask() {
         const dateMask = 'D#.##.####';
         return Array.isArray(this.date) ? `${dateMask} - ${dateMask}` : dateMask;
@@ -129,6 +150,7 @@
             this.handleDouble(this.inputDate);
             break;
         }
+        this.isEditable = false;
       },
       handleSingle(value) {
         if (value.length === DATE_LENGTH) {
@@ -172,6 +194,7 @@
         this.inputDate = Array.isArray(value)
           ? value.map(_ => getDate(_)).join(' - ')
           : getDate(value);
+        this.isEditable = false;
         this.close();
       },
       close() {
