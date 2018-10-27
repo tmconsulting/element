@@ -235,10 +235,6 @@
             {
               "path": "/circular-countdown",
               "title": "CircularCountdown"
-            },
-            {
-              "path": "/AdvancedDatePicker",
-              "title": "Advanceddatepicker"
             }
           ]
         }

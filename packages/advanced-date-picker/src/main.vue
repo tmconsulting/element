@@ -31,7 +31,7 @@
                   prefix-icon="calendar"
                   size="extra-large"
                   @focus="isEditable = true"
-                  :placeholder="blurValue">
+                  :placeholder="inputPlaceholder">
           <tm-icon name="calendar"></tm-icon>
         </tm-input>
       </div>
@@ -51,6 +51,8 @@
   const DOUBLE = 'double';
   const DATE_LENGTH = 10;
   const DATE_FORMAT = 'DD.MM.YYYY';
+  const DEFAULT_PLACEHOLDER_TEXT = 'Выберите дату';
+  const DEFAULT_POPOVER_WIDTH = 520;
 
   const getValidity = selectedDate => {
     const isYear = moment().isSame(selectedDate, 'year')
@@ -99,7 +101,11 @@
       },
       popoverWidth: {
         type: Number,
-        default: 520
+        default: DEFAULT_POPOVER_WIDTH
+      },
+      placeholder: {
+        type: String,
+        default: DEFAULT_PLACEHOLDER_TEXT
       }
     },
 
@@ -117,6 +123,9 @@
     },
 
     computed: {
+      inputPlaceholder() {
+        return this.date ? this.blurValue : this.placeholder;
+      },
       blurValue() {
         if (Array.isArray(this.date)) {
           const [from, till] = this.date;
