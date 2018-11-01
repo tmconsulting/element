@@ -1,15 +1,11 @@
 ## Changelog
 
-*2018-10-23*
-
-### 1.2.23
-
-  - Добавлен компонент AdvancedDatePicker
-
-*2018-10-26*
+*2018-11-01*
 
 ### 1.2.22
 
+  - Добавил секунды в компонент circular-countdown
+  - Добавлен компонент AdvancedDatePicker
   - Добавил иконку print-not-available
   - Добавил иконку ereg-not-available
 
