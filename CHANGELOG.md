@@ -5,6 +5,7 @@
 ### 1.2.22
 
   - Добавил секунды в компонент circular-countdown
+  - Добавлен компонент AdvancedDatePicker
   - Добавил иконку print-not-available
   - Добавил иконку ereg-not-available
 
