@@ -870,6 +870,7 @@ Search data from server-side.
 | label | label text | string | — | — |
 | tabindex | input tabindex | string | - | - |
 |focusAfterClear | set focus after clear input or not | boolean | — | true |
+| pattern | input pattern | string | - | - |
 
 ### Input slots
 
@@ -888,6 +889,9 @@ Search data from server-side.
 | focus | triggers when Input focuses | (event: Event) |
 | clear | triggers when Input cleared | |
 | change | triggers when the icon inside Input value change | (value: string \| number) |
+| keydown | triggers when an any key pressed inside Input | (event: Event) |
+| keypress | triggers when an any key pressed inside Input, represents a character being typed | (event: Event) |
+| keyup | triggers when an any key released inside Input | (event: Event) |
 
 ### Autocomplete Attributes
 

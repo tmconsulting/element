@@ -1,5 +1,12 @@
 ## Changelog
 
+*2018-11-08*
+
+### 1.2.23
+
+  - Добавлены обработчики keydown, keyup и keypress в Input
+  - Добавлен атрибут pattern в Input
+
 *2018-11-01*
 
 ### 1.2.22

@@ -32,6 +32,10 @@
         @focus="handleFocus"
         @blur="handleBlur"
         @change="handleChange"
+        @keydown="handleKeydown"
+        @keypress="handleKeypress"
+        @keyup="handleKeyup"
+        :pattern="pattern"
         :aria-label="label"
       >
       <!-- 前置内容 -->
@@ -84,6 +88,9 @@
       @focus="handleFocus"
       @blur="handleBlur"
       @change="handleChange"
+      @keydown="handleKeydown"
+      @keypress="handleKeypress"
+      @keyup="handleKeyup"
       :aria-label="label"
     >
     </textarea>
@@ -174,7 +181,8 @@
       focusAfterClear: {
         type: Boolean,
         default: true
-      }
+      },
+      pattern: String
     },
 
     computed: {
@@ -268,6 +276,15 @@
       },
       handleChange(event) {
         this.$emit('change', event.target.value);
+      },
+      handleKeydown(event) {
+        this.$emit('keydown', event);
+      },
+      handleKeypress(event) {
+        this.$emit('keypress', event);
+      },
+      handleKeyup(event) {
+        this.$emit('keyup', event);
       },
       setCurrentValue(value) {
         if (value === this.currentValue) return;
