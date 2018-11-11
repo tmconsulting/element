@@ -129,6 +129,16 @@
       TmPopover
     },
 
+    watch: {
+      date: {
+        handler(value) {
+          if (value) {
+            this.$emit('date-changed', value);
+          }
+        }
+      }
+    },
+
     props: {
       pickerType: {
         type: String,
@@ -287,7 +297,7 @@
         this.$emit('typechange', type);
       },
       focus() {
-        this.$refs.datePicker.focus();
+        this.$refs.popover.doShow();
       }
     }
   };
