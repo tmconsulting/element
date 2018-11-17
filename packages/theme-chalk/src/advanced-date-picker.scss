@@ -10,6 +10,9 @@
         table-layout: fixed;
         width: 100%;
       }
+      table > tbody > tr > th {
+        text-align: center;
+      }
     }
   }
   &__input {
