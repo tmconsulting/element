@@ -2,7 +2,7 @@
 
 *2018-12-04*
 
-### 1.2.28
+### 1.2.27
 
   - Правки по компоненту AdvancedDatePicker
   - Добавил параметры disabled-date, default-value
