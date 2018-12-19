@@ -183,6 +183,7 @@
 
     mounted() {
       this.date = this.localStorageDate;
+      if (Array.isArray(this.date)) this.type = DOUBLE;
       if (this.date) this.onChange(this.date);
     },
 
