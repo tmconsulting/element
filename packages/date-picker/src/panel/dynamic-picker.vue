@@ -404,11 +404,7 @@
 
     watch: {
       visible() {
-        if (Array.isArray(this.value) && this.panelSwitch !== 'double') {
-          this.panelSwitch = 'double';
-        } else {
-          this.handlePanelChange(null);
-        }
+        this.handlePanelChange(null);
       },
       minDate(val) {
         this.$nextTick(() => {
@@ -455,7 +451,11 @@
         }
       },
 
-      value(newVal) {
+      value(newVal, oldVal) {
+        if (Array.isArray(newVal) && this.panelSwitch !== 'double') {
+          this.panelSwitch = 'double';
+        }
+
         if (!newVal) {
           this.minDate = null;
           this.maxDate = null;
