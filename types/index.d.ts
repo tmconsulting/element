@@ -1,4 +1,4 @@
-export * from './'
+export * from './tmconsulting-ui'
 
-import * as TMui from './'
+import * as TMui from './tmconsulting-ui'
 export default TMui
