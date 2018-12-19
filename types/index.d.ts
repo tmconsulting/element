@@ -1,4 +1,2 @@
-export * from './components'
-
-import * as TMui from './components'
-export default TMui
+const TMui: any;
+export default TMui;
