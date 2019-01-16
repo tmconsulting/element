@@ -174,11 +174,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 module.exports = {
-<<<<<<< HEAD
   version: '1.2.34',
-=======
-  version: '1.2.33',
->>>>>>> origin/dev
   locale: locale.use,
   i18n: locale.i18n,
   install,
