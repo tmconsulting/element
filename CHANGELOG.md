@@ -2,9 +2,9 @@
 
 ### 1.2.31
 
-  - Пофиксил детект range дат в dynamic-picker что бы открывался сразу double panels
+*2018-12-20*
 
-*2018-12-24*
+  - Пофиксил детект range дат в dynamic-picker что бы открывался сразу double panels
 
 ### 1.2.30
 
