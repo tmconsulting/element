@@ -4,7 +4,8 @@
                 popper-class="tm-advanced-date-picker__popover"
                 ref="popover"
                 trigger="click"
-                :offset="24">
+                :offset="24"
+                :visible-arrow="false">
       <tm-date-picker :class="pickerClass"
                       v-model="date"
                       @input="onChange"
