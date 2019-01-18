@@ -44,7 +44,7 @@
 </template>
 
 <script>
-  import moment from 'moment';
+  import moment from 'moment-timezone';
   import TmPopover from 'tmconsulting-ui/packages/popover/src/main.vue';
   import TmInput from 'tmconsulting-ui/packages/input';
   import TmDatePicker from 'tmconsulting-ui/packages/date-picker/src/picker/date-picker';
@@ -119,6 +119,10 @@
     const rules = Object.values(validateRules(dates, mode));
     return rules.reduce((curr, next) => curr && next, true);
   };
+
+  const getDate = value => moment
+    .tz(value, moment.tz.guess())
+    .format(DATE_FORMATS.EDIT);
 
   export default {
     name: 'TmAdvancedDatePicker',
@@ -205,11 +209,10 @@
 
       blurValue() {
         if (Array.isArray(this.date)) {
-          const [from, till] = this.date;
-          return `${moment(from).format(DATE_FORMATS.READ)} - ${moment(till).format(DATE_FORMATS.READ)}`;
-        } else {
-          return moment(this.date).format(DATE_FORMATS.READ);
+          return this.date.map(getDate).join(' - ');
         }
+
+        return getDate(this.date);
       },
 
       dateMask() {
@@ -289,10 +292,10 @@
         if (isAvailableToClose) this.close();
       },
       onChange(value) {
-        const getDate = val => moment(val).format(DATE_FORMATS.EDIT);
         this.inputDate = Array.isArray(value)
-          ? value.map(_ => getDate(_)).join(' - ')
+          ? value.map(getDate).join(' - ')
           : getDate(value);
+
         this.isEditable = false;
         this.close();
       },
