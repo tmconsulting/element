@@ -285,6 +285,8 @@
   };
 
   export default {
+    name: 'dynamic-picker',
+
     mixins: [Locale],
 
     computed: {
@@ -451,7 +453,7 @@
         }
       },
 
-      value(newVal, oldVal) {
+      value(newVal) {
         if (Array.isArray(newVal) && this.panelSwitch !== 'double') {
           this.panelSwitch = 'double';
         }
@@ -608,6 +610,9 @@
       handleDatePick(val) {
         this.date = modifyDate(this.date, val.getFullYear(), val.getMonth(), val.getDate());
         this.handleConfirm(this.date);
+
+        if (this.panelSwitch === 'single') return;
+
         this.minDate = new Date(this.date);
         this.leftDate = new Date(this.date);
         this.rightDate = nextMonth(this.date);
