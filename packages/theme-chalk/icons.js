@@ -21,6 +21,7 @@ import Blanket from '../../packages/theme-chalk/src/icons/blanket.svg';
 import Boiler from '../../packages/theme-chalk/src/icons/boiler.svg';
 import Book from '../../packages/theme-chalk/src/icons/book.svg';
 import Bucket from '../../packages/theme-chalk/src/icons/bucket.svg';
+import CalendarPageEmpty from '../../packages/theme-chalk/src/icons/calendar-page-empty.svg';
 import Calendar from '../../packages/theme-chalk/src/icons/calendar.svg';
 import Car from '../../packages/theme-chalk/src/icons/car.svg';
 import Cart from '../../packages/theme-chalk/src/icons/cart.svg';
@@ -160,6 +161,7 @@ module.exports = {
   Boiler,
   Book,
   Bucket,
+  CalendarPageEmpty,
   Calendar,
   Car,
   Cart,
