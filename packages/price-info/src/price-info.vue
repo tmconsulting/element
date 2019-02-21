@@ -11,9 +11,11 @@
       <span v-if="labelPartChange" class="tm-price-info__change">,{{ labelPartChange }}</span>
     </template>
     <span class="tm-price-info__starts-prefix" v-if="isStartPrice && !partSum">{{ startsPrefix }}</span>
-    <span class="tm-price-info__sum">{{ labelSum }}</span>
-    <span v-if="labelChange" class="tm-price-info__change">,{{ labelChange }}</span>
-    <span v-if="!hideCurrency" class="tm-price-info__currency">{{ currencyUnicode[currency] }}</span>
+    <div class="tm-price-info__border-wrap" :class="{ 'tm-price-info__border-wrap--has-popover': hasPopover }">
+      <span class="tm-price-info__sum">{{ labelSum }}</span>
+      <span v-if="labelChange" class="tm-price-info__change">,{{ labelChange }}</span>
+      <span v-if="!hideCurrency" class="tm-price-info__currency">{{ currencyUnicode[currency] }}</span>
+    </div>
     <span v-if="taxesInfo" class="tm-price-info__taxes">
       <span>вкл.</span>
       <span>НДС</span>
@@ -63,6 +65,10 @@ export default {
       default: false
     },
     noDash: {
+      type: Boolean,
+      default: false
+    },
+    hasPopover: {
       type: Boolean,
       default: false
     }
