@@ -15,8 +15,10 @@
     display: inline-block;
     border-bottom: 1px dashed #1e1e28;
 
-    &--has-popover:hover {
-      border-bottom: 1px solid $--color-blueberry;
+    @include m(has-popover) {
+      &:hover {
+        border-bottom: 1px solid $--color-blueberry;
+      }
     }
   }
 
