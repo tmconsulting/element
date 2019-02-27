@@ -17,9 +17,7 @@
             v-for="shortcut in shortcuts"
             :key="shortcut.text"
             @click="handleShortcutClick(shortcut)">
-            <slot name="shortcut-inner" v-bind="shortcut">
-              {{shortcut.text}}
-            </slot>
+            <slot name="shortcut-inner" v-bind="shortcut">{{shortcut.text}}</slot>
           </button>
         </div>
         <div class="tm-picker-panel__body">
