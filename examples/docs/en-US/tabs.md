@@ -173,7 +173,7 @@ Flow tabs.
 
 ```html
 <template>
-  <div style="padding: 20px; background-color: #f4f5f9;">
+  <div style="padding: 20px; background-color: #edf0f8;">
     <tm-tabs type="flow" v-model="activeName" @tab-click="handleClick">
       <tm-tab-pane label="User" name="first" icon="airplane">User</tm-tab-pane>
       <tm-tab-pane icon="airplane" label="Config Config Config Config Config Config Config Config Config Config Config Config Config Config Config " name="second" closable>Config</tm-tab-pane>

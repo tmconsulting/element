@@ -38,7 +38,7 @@
   }
   .bg-smoke {
     color: #1e1e28;
-    background-color: #f4f5f9;
+    background-color: #edf0f8;
   }
 
   .bg-success {
@@ -97,7 +97,7 @@ The main color of Element is bright and friendly blue.
     <div class="demo-color-box bg-brown">Meat Brown<div class="value">#ebb242</div></div>
   </tm-col>
   <tm-col :span="4">
-    <div class="demo-color-box bg-smoke">White Smoke<div class="value">#f4f5f9</div></div>
+    <div class="demo-color-box bg-smoke">White Smoke<div class="value">#edf0f8</div></div>
   </tm-col>
 </tm-row>
 

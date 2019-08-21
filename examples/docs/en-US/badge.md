@@ -3,7 +3,7 @@
         margin-left: 10px;
     }
     .demo-badge {
-        background: #f4f5f9;
+        background: #edf0f8;
     }
 </style>
 
