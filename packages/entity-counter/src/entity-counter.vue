@@ -67,14 +67,18 @@
         this.$emit('change', value);
       },
       getValueLabel(value) {
-        if (value === 1) {
-          return this.declination[0];
-        } else if (value < 5) {
-          return this.declination[1];
-        } else if (value < 21) {
-          return this.declination[2];
+        if (!this.declination) {
+          return '';
         } else {
-          return this.getValueLabel(parseInt(value.toString().slice(-1), 10));
+          if (value === 1) {
+            return this.declination[0];
+          } else if (value < 5) {
+            return this.declination[1];
+          } else if (value < 21) {
+            return this.declination[2];
+          } else {
+            return this.getValueLabel(parseInt(value.toString().slice(-1), 10));
+          }
         }
       },
       handleIncrease() {
