@@ -138,7 +138,7 @@
       date = moment.tz(value, resultFormat, moment.tz.guess());
     }
 
-    return date.format(resultFormat);
+    return date.isValid() ? date.format(resultFormat) : null;
   };
 
   export default {
@@ -163,12 +163,10 @@
       },
       date: {
         handler(value) {
-          if (value) {
-            this.type = Array.isArray(value) ? DOUBLE : SINGLE;
-            this.updateInputDate(value);
-            this.$emit('date-changed', value);
-            this.$emit('input', value);
-          }
+          this.type = Array.isArray(value) ? DOUBLE : SINGLE;
+          this.updateInputDate(value);
+          this.$emit('date-changed', value);
+          this.$emit('input', value);
         },
         deep: true
       },
